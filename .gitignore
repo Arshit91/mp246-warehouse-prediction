@@ -1,0 +1,8 @@
+__pycache__/
+*.pyc
+.venv/
+mlruns/
+.dvc/tmp/
+data/raw/train.csv
+data/raw/later.csv
+data/raw/holdout_features.csv
