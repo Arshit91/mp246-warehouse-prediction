@@ -1,0 +1,40 @@
+data:
+  train_path: "data/raw/train.csv"
+  target_col: "pick_seconds"
+  test_size: 0.2
+  random_state: 42
+
+cleaning:
+  drop_duplicates: true
+  sentinel_columns:
+    - "shift_hour"
+  sentinels:
+    - -999
+  shift_col: "shift"
+  morning_group_value: "Morning"
+  picker_exp_col: "picker_exp_months"
+  morning_exp_factor: 12.0
+  stuck_col: "order_weight_kg"
+  date_col: "date"
+  stuck_start_date: "2026-04-28"
+  stuck_end_date: "2026-05-15"
+
+mlflow:
+  tracking_uri: "sqlite:///mlflow.db"
+  experiment_name: "mp246_warehouse_picking"
+  registered_model_name: "mp246_model"
+  champion_alias: "champion"
+
+output:
+  model_path: "models/model.joblib"
+
+models:
+  ridge:
+    alpha: 1.0
+  random_forest:
+    n_estimators: 100
+    max_depth: 10
+  gradient_boosting:
+    n_estimators: 150
+    learning_rate: 0.05
+    max_depth: 4
