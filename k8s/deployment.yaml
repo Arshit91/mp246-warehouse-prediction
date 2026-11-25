@@ -1,0 +1,41 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mp246-warehouse-api
+  labels:
+    app: mp246-warehouse-api
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: mp246-warehouse-api
+  template:
+    metadata:
+      labels:
+        app: mp246-warehouse-api
+    spec:
+      containers:
+        - name: api
+          image: mp246-warehouse-api:latest
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 8000
+          readinessProbe:
+            httpGet:
+              path: /health
+              port: 8000
+            initialDelaySeconds: 5
+            periodSeconds: 10
+          livenessProbe:
+            httpGet:
+              path: /health
+              port: 8000
+            initialDelaySeconds: 10
+            periodSeconds: 15
+          resources:
+            requests:
+              cpu: "250m"
+              memory: "256Mi"
+            limits:
+              cpu: "1000m"
+              memory: "1Gi"
