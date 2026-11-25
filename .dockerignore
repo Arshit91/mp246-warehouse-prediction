@@ -1,0 +1,10 @@
+@'
+.venv/
+.git/
+__pycache__/
+*.pyc
+.pytest_cache/
+data/raw/
+.dvc/cache/
+mlflow.db
+'@ | Set-Content -Path .dockerignore -Encoding UTF8
