@@ -1,0 +1,140 @@
+{
+    "dataset_summary": {
+        "train_rows_after_cleaning": 1000,
+        "later_rows_after_cleaning": 300,
+        "train_columns": 11,
+        "later_columns": 11
+    },
+    "model_performance": {
+        "train_mae": 16.059709877804035,
+        "later_mae": 70.63118832684876,
+        "mae_increase": 54.57147844904472
+    },
+    "numeric_drift": {
+        "items_in_order": {
+            "train_mean": 19.786,
+            "later_mean": 20.746666666666666,
+            "train_std": 11.359632267166276,
+            "later_std": 11.395115227986325,
+            "mean_diff": 0.9606666666666648,
+            "mean_shift_ratio": 0.048552848815660805,
+            "std_shift_ratio": 0.00312360118580676,
+            "threshold": 0.25,
+            "drift_detected": false
+        },
+        "aisle_distance_m": {
+            "train_mean": 198.617,
+            "later_mean": 357.66333333333336,
+            "train_std": 111.88850409380022,
+            "later_std": 110.88146366957486,
+            "mean_diff": 159.04633333333337,
+            "mean_shift_ratio": 0.800768984192357,
+            "std_shift_ratio": 0.00900039224209421,
+            "threshold": 0.25,
+            "drift_detected": true
+        },
+        "picker_exp_months": {
+            "train_mean": 48.434,
+            "later_mean": 20.400277777777777,
+            "train_std": 37.55534646422594,
+            "later_std": 20.116167526304917,
+            "mean_diff": 28.03372222222222,
+            "mean_shift_ratio": 0.5788025399971554,
+            "std_shift_ratio": 0.46435942095576316,
+            "threshold": 0.25,
+            "drift_detected": true
+        },
+        "shelf_height_m": {
+            "train_mean": 1.4098899999999999,
+            "later_mean": 1.3867333333333334,
+            "train_std": 0.6406016378049297,
+            "later_std": 0.6295100783025669,
+            "mean_diff": 0.023156666666666492,
+            "mean_shift_ratio": 0.016424449188707273,
+            "std_shift_ratio": 0.01731428527152837,
+            "threshold": 0.25,
+            "drift_detected": false
+        },
+        "shift_hour": {
+            "train_mean": 11.63891779396462,
+            "later_mean": 11.34,
+            "train_std": 6.566304807698933,
+            "later_std": 6.942024609983656,
+            "mean_diff": 0.2989177939646197,
+            "mean_shift_ratio": 0.025682610639248954,
+            "std_shift_ratio": 0.0572193666435031,
+            "threshold": 0.25,
+            "drift_detected": false
+        },
+        "order_weight_kg": {
+            "train_mean": 12.740167037861914,
+            "later_mean": 12.702833333333334,
+            "train_std": 7.193154360137655,
+            "later_std": 7.199644940071644,
+            "mean_diff": 0.03733370452857976,
+            "mean_shift_ratio": 0.0029303936453603354,
+            "std_shift_ratio": 0.0009023273530675283,
+            "threshold": 0.25,
+            "drift_detected": false
+        }
+    },
+    "categorical_drift": {
+        "zone_type": {
+            "train_proportions": {
+                "ambient": 0.364,
+                "chilled": 0.329,
+                "bulky": 0.307
+            },
+            "later_proportions": {
+                "chilled": 0.37666666666666665,
+                "ambient": 0.36666666666666664,
+                "bulky": 0.25666666666666665
+            },
+            "max_proportion_difference": 0.05033333333333334,
+            "threshold": 0.1,
+            "drift_detected": false
+        },
+        "shift": {
+            "train_proportions": {
+                "Morning": 0.407,
+                "Night": 0.378,
+                "Evening": 0.215
+            },
+            "later_proportions": {
+                "Night": 0.4066666666666667,
+                "Morning": 0.39,
+                "Evening": 0.20333333333333334
+            },
+            "max_proportion_difference": 0.028666666666666674,
+            "threshold": 0.1,
+            "drift_detected": false
+        }
+    },
+    "target_drift": {
+        "pick_seconds": {
+            "train_mean": 286.156,
+            "later_mean": 429.36333333333334,
+            "train_std": 83.72871766701174,
+            "later_std": 132.7842240481745,
+            "mean_diff": 143.20733333333334,
+            "mean_shift_ratio": 0.5004519679242557,
+            "std_shift_ratio": 0.5858862735275133,
+            "threshold": 0.25,
+            "drift_detected": true
+        }
+    },
+    "drifted_features": {
+        "numeric": [
+            "aisle_distance_m",
+            "picker_exp_months"
+        ],
+        "categorical": [],
+        "all": [
+            "aisle_distance_m",
+            "picker_exp_months"
+        ]
+    },
+    "drifted_targets": [
+        "pick_seconds"
+    ]
+}
