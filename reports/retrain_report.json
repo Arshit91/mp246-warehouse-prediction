@@ -1,0 +1,15 @@
+{
+  "registered_model": "mp246_model",
+  "champion_alias": "champion",
+  "new_model_version": "2",
+  "best_run_name": "retrain_gradient_boosting_v1",
+  "best_run_id": "e346a175658148a594a1c34e5cdad895",
+  "data_sha256": "86e3bb0958f4c32719dd6cfc0f6ae69dabdd71a76bb97632acf6d810f7f612b7",
+  "clean_train_rows": 1000,
+  "clean_later_rows": 300,
+  "combined_rows": 1300,
+  "before_retrain_later_mae": 70.6312,
+  "after_retrain_later_mae": 23.775,
+  "best_val_mae": 25.9181,
+  "model_path": "models\\model.joblib"
+}
